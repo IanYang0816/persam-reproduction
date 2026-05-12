@@ -1,6 +1,0 @@
-condition,mIoU,mAcc
-original,89.32,92.19
-erode,88.45,92.18
-dilate,87.33,90.23
-shift,73.84,82.28
-noise,89.32,92.19
