@@ -1,0 +1,3 @@
+Method,mIoU,mAcc
+PerSAM,89.32,92.19
+PerSAM-F,95.18,95.57
