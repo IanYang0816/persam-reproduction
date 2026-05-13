@@ -2,17 +2,22 @@
 
 This project uses the PerSeg dataset released with the PerSAM paper and the SAM ViT-H checkpoint used by Segment Anything.
 
-The dataset, model checkpoint, generated outputs, and perturbed datasets are **not included** in this repository because they are large. Please download them following the official PerSAM and Segment Anything instructions.
+The dataset, model checkpoint, generated outputs, and perturbed datasets are **not included** in this repository because they are large.
 
 ## Required Files
 
-1. PerSeg dataset  
+1. **PerSeg dataset**
    - Used for personalized segmentation evaluation.
-   - It should contain object categories with `Images/` and `Annotations/` folders.
+   - Download from the official PerSAM repository:
+     - Google Drive: see the PerSeg link in the official PerSAM README.
+     - Baidu Yun: see the official PerSAM README; extraction code is `222k`.
+   - Official repository: https://github.com/ZrrSkywalker/Personalize-SAM
 
-2. SAM ViT-H checkpoint  
+2. **SAM ViT-H checkpoint**
    - File name: `sam_vit_h_4b8939.pth`
-   - This is the checkpoint used by the official PerSAM implementation.
+   - Download command:
+
+    wget -nc https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
 
 ## Expected Directory Structure
 
@@ -37,17 +42,22 @@ Each object category should contain a reference image and reference mask indexed
 
 ## Notes on PerSeg Extraction
 
-In our setup, the downloaded PerSeg zip file extracted into a folder named `data 3`. We renamed it to `data` before running the official PerSAM scripts.
+In our setup, the downloaded PerSeg zip file extracted into a folder named:
 
-Example:
+    data 3
+
+We renamed it to:
+
+    data
+
+Example command:
 
     mv "data 3" data
 
-## Checkpoint Download
+After renaming, the folder should contain:
 
-The SAM ViT-H checkpoint can be downloaded with:
-
-    wget -nc https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
+    data/Images/
+    data/Annotations/
 
 ## Files Not Uploaded to GitHub
 
@@ -67,4 +77,10 @@ These files are either large datasets, model checkpoints, or generated experimen
 
 ## Reproduction Reminder
 
-To reproduce our results, first prepare the data and checkpoint in the expected structure, then run the scripts in the `code/` folder or follow the commands in the root `README.md`.
+To reproduce our results:
+
+1. Clone the official PerSAM repository.
+2. Download PerSeg from the official PerSAM README.
+3. Download `sam_vit_h_4b8939.pth`.
+4. Put the dataset and checkpoint in the expected structure above.
+5. Follow the commands in the root `README.md`.
